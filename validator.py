@@ -5,6 +5,12 @@ def validate_phone(phone: str) -> bool:
     return bool(re.match(pattern, phone.replace('-', '').replace(' ', '')))
 
 
+def validate_snils(snils: str) -> bool:
+    """Валидация СНИЛС (формат XXX-XXX-XXX YY)."""
+    import re
+    return bool(re.match(r'^\d{3}-\d{3}-\d{3} \d{2}$', snils))
+
+
 # validator.py
 def validate_email(email: str) -> bool:
     """Валидация email-адреса."""
